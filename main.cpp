@@ -1,83 +1,38 @@
-// ƒEƒBƒ“ƒhƒEŠÖ˜A‚Ìˆ—
-#include "Window.h"
+ï»¿//
+// ãƒ¡ã‚¤ãƒ³ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
+//
 
-// •W€ƒ‰ƒCƒuƒ‰ƒŠ
-#include <cmath>
-#include <memory>
+// ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒœãƒƒã‚¯ã‚¹ã®è¡¨ç¤ºã®æº–å‚™
+#if defined(_WIN32)
+#  include <Windows.h>
+#  include <atlstr.h>  
+#endif
 
-// ŒõŒ¹
-const GgSimpleShader::Light light =
-{
-  { 0.2f, 0.2f, 0.2f, 1.0f },
-  { 1.0f, 1.0f, 1.0f, 1.0f },
-  { 1.0f, 1.0f, 1.0f, 1.0f },
-  { 3.0f, 4.0f, 5.0f, 1.0f }
-};
-
-// ƒIƒuƒWƒFƒNƒg‚ÌŞ¿
-const GgSimpleShader::Material material =
-{
-  { 0.7f, 0.5f, 0.5f, 1.0f },
-  { 0.7f, 0.5f, 0.5f, 1.0f },
-  { 0.2f, 0.2f, 0.2f, 1.0f },
-  50.0f
-};
+// ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³æœ¬ä½“
+#include "GgApplication.h"
 
 //
-// ƒƒCƒ“ƒvƒƒOƒ‰ƒ€
+// ãƒ¡ã‚¤ãƒ³ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
 //
-int main(int argc, const char *argv[])
+int main() try
 {
-  // ƒEƒBƒ“ƒhƒE‚ğì¬‚·‚é
-  Window window("ggsample14");
+  // ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³æœ¬ä½“
+  GgApplication app;
 
-  // ”wŒiF‚ğw’è‚·‚é
-  glClearColor(0.2f, 0.4f, 0.6f, 0.0f);
+  // ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚’å®Ÿè¡Œã™ã‚‹
+  app.run();
+}
+catch (const std::exception &e)
+{
+  // ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã™ã‚‹
+#if defined(_WIN32)
+  const CStringW message(e.what());
+  MessageBox(NULL, LPCWSTR(message), TEXT("ã‚²ãƒ¼ãƒ ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ç‰¹è«–"), MB_OK | MB_ICONERROR);
+#else
+  std::cerr << e.what() << "\n\n[Type enter key] ";
+  std::cin.get();
+#endif
 
-  // ‰B–ÊÁ‹‚ğ—LŒø‚É‚·‚é
-  glEnable(GL_DEPTH_TEST);
-  glEnable(GL_CULL_FACE);
-
-  // }Œ`—p‚ÌƒvƒƒOƒ‰ƒ€ƒIƒuƒWƒFƒNƒg
-  GgSimpleShader simple("simple.vert", "simple.frag");
-
-  // “_ŒQ‚ÌƒVƒF[ƒ_
-  GgPointShader point("point.vert", "point.frag", "point.geom");
-
-  // OBJ ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
-  const std::unique_ptr<const GgElements> object(ggElementsObj("bunny.obj"));
-
-  // “_
-  const std::unique_ptr<const GgPoints> sphere(ggPointsSphere(100, 1.0f, 0.0f, 0.0f, 0.0f));
-
-  // ƒrƒ…[•ÏŠ·s—ñ‚ğ mv ‚É‹‚ß‚é
-  const GgMatrix mv(ggLookat(0.0f, 0.0f, 3.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f));
-
-  // ƒEƒBƒ“ƒhƒE‚ªŠJ‚¢‚Ä‚¢‚éŠÔ‚­‚è•Ô‚µ•`‰æ‚·‚é
-  while (window.shouldClose() == GL_FALSE)
-  {
-    // “Š‰e•ÏŠ·s—ñ
-    const GgMatrix mp(ggPerspective(0.5f, window.getAspect(), 1.0f, 15.0f));
-
-    // ‰æ–ÊÁ‹
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    // }Œ`‚Ì•`‰æ
-    simple.use();
-    simple.loadLightMaterial(light);
-    simple.loadLightPosition(light.position);
-    simple.loadMaterial(material);
-    simple.loadMatrix(mp, mv);
-    object->draw();
-
-    // “_ŒQ‚Ì•`‰æ
-    point.use();
-    point.loadMatrix(mp, mv * window.getLeftTrackball());
-    sphere->draw();
-
-    // ƒJƒ‰[ƒoƒbƒtƒ@‚ğ“ü‚ê‘Ö‚¦‚ÄƒCƒxƒ“ƒg‚ğæ‚èo‚·
-    window.swapBuffers();
-  }
-
-  return 0;
+  // ãƒ–ãƒ­ã‚°ãƒ©ãƒ ã‚’çµ‚äº†ã™ã‚‹
+  return EXIT_FAILURE;
 }

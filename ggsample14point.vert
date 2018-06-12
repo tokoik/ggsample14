@@ -1,8 +1,8 @@
 #version 150 core
 #extension GL_ARB_explicit_attrib_location : enable
 
-// 頂点属性
-layout (location = 0) in vec4 pv;                   // ローカル座標系の頂点位置
+// 鬆らせ螻樊ｧ
+layout (location = 0) in vec4 pv;                   // 繝ｭ繝ｼ繧ｫ繝ｫ蠎ｧ讓咏ｳｻ縺ｮ鬆らせ菴咲ｽｮ
 
 void main(void)
 {
