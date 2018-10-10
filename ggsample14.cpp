@@ -72,12 +72,12 @@ void GgApplication::run()
     simple.use();
     simple.selectLight(light.get());
     simple.selectMaterial(material.get());
-    simple.loadMatrix(mp, mv * window.getRightTrackball());
+    simple.loadMatrix(mp, mv * window.getTrackball(GLFW_MOUSE_BUTTON_2));
     object->draw();
 
     // 点群の描画
     point.use();
-    point.loadMatrix(mp, mv * window.getLeftTrackball());
+    point.loadMatrix(mp, mv * window.getTrackball(GLFW_MOUSE_BUTTON_1));
     sphere->draw();
 
     // カラーバッファを入れ替えてイベントを取り出す
