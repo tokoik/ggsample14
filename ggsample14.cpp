@@ -48,7 +48,7 @@ void GgApplication::run()
   const std::unique_ptr<const GgElements> object(ggElementsObj("bunny.obj", true));
 
   // 物体の材質
-  const std::unique_ptr<GgSimpleShader::MaterialBuffer> material(new GgSimpleShader::MaterialBuffer(objectMaterial));
+  const GgSimpleShader::MaterialBuffer material(objectMaterial);
 
   // 点
   const std::unique_ptr<const GgPoints> sphere(ggPointsSphere(200, 2.0f, 0.0f, 0.0f, 0.0f));
@@ -57,10 +57,10 @@ void GgApplication::run()
   const GgMatrix mv(ggLookat(0.0f, 0.0f, 7.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f));
 
   // 光源の材質
-  const std::unique_ptr<GgSimpleShader::LightBuffer> light(new GgSimpleShader::LightBuffer(lightProperty));
+  const GgSimpleShader::LightBuffer light(lightProperty);
 
   // ウィンドウが開いている間くり返し描画する
-  while (window.shouldClose() == GL_FALSE)
+  while (window)
   {
     // 投影変換行列
     const GgMatrix mp(ggPerspective(0.5f, window.getAspect(), 1.0f, 15.0f));
@@ -69,15 +69,12 @@ void GgApplication::run()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     // 図形の描画
-    simple.use();
-    simple.selectLight(light.get());
-    simple.selectMaterial(material.get());
-    simple.loadMatrix(mp, mv * window.getTrackball(GLFW_MOUSE_BUTTON_2));
+    simple.use(mp, mv * window.getTrackball(GLFW_MOUSE_BUTTON_2), light);
+    material.select();
     object->draw();
 
     // 点群の描画
-    point.use();
-    point.loadMatrix(mp, mv * window.getTrackball(GLFW_MOUSE_BUTTON_1));
+    point.use(mp, mv * window.getTrackball(GLFW_MOUSE_BUTTON_1));
     sphere->draw();
 
     // カラーバッファを入れ替えてイベントを取り出す
