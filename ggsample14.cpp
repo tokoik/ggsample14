@@ -42,7 +42,7 @@ void GgApplication::run()
   GgSimpleShader simple("ggsample14.vert", "ggsample14.frag");
 
   // 点群のシェーダ
-  GgPointShader point("ggsample14point.vert", "ggsample14point.frag", "ggsample14point.geom");
+  GgSimpleShader point("ggsample14point.vert", "ggsample14point.frag", "ggsample14point.geom");
 
   // OBJ ファイルの読み込み
   const std::unique_ptr<const GgElements> object(ggElementsObj("bunny.obj", true));
