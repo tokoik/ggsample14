@@ -1,5 +1,5 @@
 ﻿// ウィンドウ関連の処理
-#include "GgApplication.h"
+#include "Window.h"
 
 // 標準ライブラリ
 #include <cmath>
@@ -26,7 +26,7 @@ const GgSimpleShader::Material objectMaterial =
 //
 // アプリケーションの実行
 //
-void GgApplication::run()
+void app()
 {
   // ウィンドウを作成する
   Window window("ggsample14");
