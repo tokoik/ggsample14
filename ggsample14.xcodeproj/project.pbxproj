@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7D051C6B15AAFA11006B547F /* bunny.obj in Resources */ = {isa = PBXBuildFile; fileRef = 7D051C6A15AAFA03006B547F /* bunny.obj */; };
-		7D7AF85F1222C8CC003A0434 /* opengl.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AF85E1222C8CC003A0434 /* opengl.icns */; };
+		7D7AF85F1222C8CC003A0434 /* gg.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7D7AF85E1222C8CC003A0434 /* gg.icns */; };
 		7DC2DA02150E3F88007E9256 /* gg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC2DA00150E3F88007E9256 /* gg.cpp */; };
 		7DC2DA04150E3F8F007E9256 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DC2DA03150E3F8F007E9256 /* main.cpp */; };
 		7DC2DA33150E408C007E9256 /* ggsample14.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7DC2DA1D150E3FB9007E9256 /* ggsample14.frag */; };
@@ -24,17 +24,17 @@
 		7D051C6A15AAFA03006B547F /* bunny.obj */ = {isa = PBXFileReference; fileEncoding = 8; lastKnownFileType = text; path = bunny.obj; sourceTree = "<group>"; };
 		7D1E90EE1123E36C005E6C75 /* ggsample14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ggsample14.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1E90F11123E36C005E6C75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7D7AF85E1222C8CC003A0434 /* opengl.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = opengl.icns; sourceTree = "<group>"; };
+		7D7AF85E1222C8CC003A0434 /* gg.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = gg.icns; sourceTree = "<group>"; };
 		7DC2DA00150E3F88007E9256 /* gg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = gg.cpp; sourceTree = "<group>"; };
 		7DC2DA01150E3F88007E9256 /* gg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = gg.h; sourceTree = "<group>"; };
-		7DC2DA03150E3F8F007E9256 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = main.cpp; sourceTree = "<group>"; };
+		7DC2DA03150E3F8F007E9256 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = main.cpp; sourceTree = "<group>"; tabWidth = 2; };
 		7DC2DA1D150E3FB9007E9256 /* ggsample14.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; lineEnding = 0; path = ggsample14.frag; sourceTree = "<group>"; };
 		7DC2DA1E150E3FB9007E9256 /* ggsample14.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; lineEnding = 0; path = ggsample14.vert; sourceTree = "<group>"; };
 		7DC2DA22150E3FD3007E9256 /* ggsample14point.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; lineEnding = 0; path = ggsample14point.frag; sourceTree = "<group>"; };
 		7DC2DA23150E3FD3007E9256 /* ggsample14point.geom */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; lineEnding = 0; path = ggsample14point.geom; sourceTree = "<group>"; };
 		7DC2DA24150E3FD3007E9256 /* ggsample14point.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; lineEnding = 0; path = ggsample14point.vert; sourceTree = "<group>"; };
 		7DF0F2FF20D157E0001933AE /* bunny.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bunny.mtl; sourceTree = "<group>"; };
-		7DF0F30120D1581F001933AE /* GgApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = GgApplication.h; sourceTree = "<group>"; };
+		7DF0F30120D1581F001933AE /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Window.h; sourceTree = "<group>"; };
 		7DF0F30220D1582D001933AE /* ggsample14.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; lineEnding = 0; path = ggsample14.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +56,7 @@
 				7DC2DA03150E3F8F007E9256 /* main.cpp */,
 				7DC2DA01150E3F88007E9256 /* gg.h */,
 				7DC2DA00150E3F88007E9256 /* gg.cpp */,
-				7DF0F30120D1581F001933AE /* GgApplication.h */,
+				7DF0F30120D1581F001933AE /* Window.h */,
 				7DC2DA1E150E3FB9007E9256 /* ggsample14.vert */,
 				7DC2DA1D150E3FB9007E9256 /* ggsample14.frag */,
 				7DC2DA24150E3FD3007E9256 /* ggsample14point.vert */,
@@ -66,7 +66,7 @@
 				7DF0F2FF20D157E0001933AE /* bunny.mtl */,
 				7D1E90EF1123E36C005E6C75 /* Products */,
 				7D1E90F11123E36C005E6C75 /* Info.plist */,
-				7D7AF85E1222C8CC003A0434 /* opengl.icns */,
+				7D7AF85E1222C8CC003A0434 /* gg.icns */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,7 +104,7 @@
 		7D1E90DA1123E2F7005E6C75 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 7D1E90DD1123E2F7005E6C75 /* Build configuration list for PBXProject "ggsample14" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -139,7 +139,7 @@
 				7DC2DA37150E408C007E9256 /* ggsample14point.vert in Resources */,
 				7D051C6B15AAFA11006B547F /* bunny.obj in Resources */,
 				7DF0F30020D157E0001933AE /* bunny.mtl in Resources */,
-				7D7AF85F1222C8CC003A0434 /* opengl.icns in Resources */,
+				7D7AF85F1222C8CC003A0434 /* gg.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +177,7 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -219,6 +220,7 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -246,6 +248,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -255,7 +258,7 @@
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_LDFLAGS = (
 					"-lglfw3_macos",
 					"-framework",
@@ -277,6 +280,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -285,7 +289,7 @@
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_LDFLAGS = (
 					"-lglfw3_macos",
 					"-framework",
