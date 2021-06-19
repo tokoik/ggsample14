@@ -1,5 +1,4 @@
-#version 150 core
-#extension GL_ARB_explicit_attrib_location : enable
+#version 410 core
 
 // 三角形の頂点位置
 const vec4 position[] = vec4[](
