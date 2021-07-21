@@ -154,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gg.h" />
+    <ClInclude Include="GgApp.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
