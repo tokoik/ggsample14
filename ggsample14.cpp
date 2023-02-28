@@ -48,13 +48,13 @@ int GgApp::main(int argc, const char* const* argv)
   GgSimpleShader point{ PROJECT_NAME "point.vert", PROJECT_NAME "point.frag", PROJECT_NAME "point.geom" };
 
   // OBJ ファイルの読み込み
-  const std::unique_ptr<const GgElements> object{ ggElementsObj("bunny.obj", true) };
+  const auto object{ ggElementsObj("bunny.obj", true) };
 
   // 物体の材質
   const GgSimpleShader::MaterialBuffer material{ objectMaterial };
 
   // 点
-  const std::unique_ptr<const GgPoints> sphere{ ggPointsSphere(200, 2.0f, 0.0f, 0.0f, 0.0f) };
+  const auto sphere{ ggPointsSphere(200, 2.0f, 0.0f, 0.0f, 0.0f) };
 
   // ビュー変換行列を mv に求める
   const auto mv{ ggLookat(0.0f, 0.0f, 7.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f) };
