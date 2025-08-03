@@ -14,6 +14,24 @@ const vec4 color[] = vec4[](
   vec4(0.0, 0.0, 1.0, 1.0)
   );
 
+// 光源
+layout (std140) uniform Light
+{
+  vec4 lamb;                                          // 環境光成分
+  vec4 ldiff;                                         // 拡散反射光成分
+  vec4 lspec;                                         // 鏡面反射光成分
+  vec4 lpos;                                          // 位置
+};
+
+// 材質
+layout (std140) uniform Material
+{
+  vec4 kamb;                                          // 環境光の反射係数
+  vec4 kdiff;                                         // 拡散反射係数
+  vec4 kspec;                                         // 鏡面反射係数
+  float kshi;                                         // 輝き係数
+};
+
 // 変換行列
 uniform mat4 mv;                                      // モデルビュー変換行列
 uniform mat4 mp;                                      // 投影変換行列
